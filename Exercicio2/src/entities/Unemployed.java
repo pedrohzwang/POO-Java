@@ -23,11 +23,36 @@ public class Unemployed extends Beneficiary{
 
     @Override
     public double calculateBenefitValue() {
-        return 0;
+        double totalValue = 0.00;
+
+        if(getUnemployedMonths() < 6){
+            return calculateBenefitReduction();
+        } else if(getUnemployedMonths() >= 6 || getUnemployedMonths() <= 12) {
+            totalValue = 1800.00;
+        } else if(getUnemployedMonths() > 12 && getUnemployedMonths() <= 18){
+            totalValue = 2000.00;
+        } else if(getUnemployedMonths() > 18){
+            totalValue = 2300.00;
+        }
+
+        if(isAMState()){
+            return additionAM(totalValue);
+        }
+        return totalValue;
     }
 
     @Override
     public double calculateBenefitDuration() {
-        return 0;
+        return 12.00;
+    }
+
+    //Regra de negocio especifica H
+    private double calculateBenefitReduction(){
+        final double REDUCTION = 0.1;
+        if(isAMState()){
+            double addition = additionAM(1800.00);
+            return addition - (addition * REDUCTION);
+        }
+        return 1800.00 - (1800.00 * REDUCTION);
     }
 }

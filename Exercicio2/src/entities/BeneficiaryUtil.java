@@ -1,3 +1,5 @@
+package entities;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -13,6 +15,13 @@ public final class BeneficiaryUtil {
             throw new RuntimeException();
         }
         return age;
+    }
+
+    public static boolean isSameState(String beneficiaryState, String state){
+        if(beneficiaryState.equalsIgnoreCase(state.substring(0, 2))){
+            return true;
+        }
+        return false;
     }
 
 }

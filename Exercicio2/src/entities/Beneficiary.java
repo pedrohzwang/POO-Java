@@ -52,4 +52,15 @@ public abstract class Beneficiary implements interfaces.Beneficiary {
 	public abstract double calculateBenefitValue();
 
 	public abstract double calculateBenefitDuration();
+
+	//Regra de negocio especifica P
+	public double additionAM(double totalValue){
+		final double ADDITION = 0.11;
+		return totalValue + (totalValue * ADDITION);
+	}
+
+	//Regra de negocio especifica P
+	public boolean isAMState(){
+		return getState().substring(0, 2).equalsIgnoreCase("AM");
+	}
 }

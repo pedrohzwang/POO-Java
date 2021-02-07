@@ -1,6 +1,9 @@
 package application;
 
 import entities.Beneficiary;
+import entities.Employee;
+import entities.Employer;
+import entities.Unemployed;
 import enums.Category;
 
 import java.text.ParseException;
@@ -45,7 +48,17 @@ public class Main {
                 System.out.println("Informe a UF do beneficiário:\n");
                 String state = sc.next();
 
-                //Beneficiary beneficiary = new Beneficiary(name, bornDate, state, Category.getCategoryById(categoryId));
+                switch (categoryId){
+                    case 1:
+                        Employee employee = new Employee(name, bornDate, state, retired);
+                        break;
+                    case 2:
+                        Employer employer = new Employer(name, bornDate, state, employeeNumber);
+                        break;
+                    case 3:
+                        Unemployed unemployed = new Unemployed(name, bornDate, state, unemployedMonths);
+                        break;
+                }
 
                /* System.out.println("Nome do beneficiário: " + beneficiary.getName()
                         + "\nData de nascimento: " + sdf.format(beneficiary.getBornDate())
