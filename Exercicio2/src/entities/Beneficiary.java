@@ -4,7 +4,7 @@ import enums.Category;
 
 import java.util.Date;
 
-public class Beneficiary {
+public abstract class Beneficiary implements interfaces.Beneficiary {
 	private String name;
 	private Date bornDate;
 	private String state;
@@ -45,9 +45,11 @@ public class Beneficiary {
 		return category;
 	}
 
-	private void setCategory(Category category) {
+	protected void setCategory(Category category) {
 		this.category = category;
 	}
 
+	public abstract double calculateBenefitValue();
 
+	public abstract double calculateBenefitDuration();
 }

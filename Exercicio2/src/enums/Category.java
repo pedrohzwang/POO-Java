@@ -7,7 +7,8 @@ public enum Category {
 
     EMPLOYEE(1, "Empregado"),
     EMPLOYER(2, "Empregador"),
-    UNEMPLOYED(3, "Desempregado");
+    UNEMPLOYED(3, "Desempregado"),
+    NONE(4, "Nenhuma");
 
     private static Map<String, Category> categoryMap = new HashMap<>();
     private int id;
