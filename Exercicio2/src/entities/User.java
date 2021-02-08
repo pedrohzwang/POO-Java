@@ -4,13 +4,13 @@ import enums.Category;
 
 import java.util.Date;
 
-public abstract class Beneficiary implements interfaces.Beneficiary {
+public abstract class User implements interfaces.User {
 	private String name;
 	private Date bornDate;
 	private String state;
 	private Category category;
 
-	public Beneficiary(String name, Date bornDate, String state, Category category) {
+	public User(String name, Date bornDate, String state, Category category) {
 		this.name = name;
 		this.bornDate = bornDate;
 		this.state = state;

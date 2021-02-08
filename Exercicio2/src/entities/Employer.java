@@ -4,7 +4,7 @@ import enums.Category;
 
 import java.util.Date;
 
-public class Employer extends Beneficiary{
+public class Employer extends User {
 
     private int employeeQuantity;
 

@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface Beneficiary {
+public interface User {
 
     public double calculateBenefitValue();
 

@@ -4,7 +4,7 @@ import enums.Category;
 
 import java.util.Date;
 
-public class Unemployed extends Beneficiary{
+public class Unemployed extends User {
 
     private double unemployedMonths;
 

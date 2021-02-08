@@ -4,7 +4,7 @@ import enums.Category;
 
 import java.util.Date;
 
-public class Employee extends Beneficiary{
+public class Employee extends User {
 
     private boolean retired;
     private final int AGE = BeneficiaryUtil.calculateAge(this.getBornDate());
@@ -46,7 +46,7 @@ public class Employee extends Beneficiary{
     public double calculateBenefitDuration() {
         double duration = 0.00;
         if (this.isRetired()) {
-            return calculateBenefitValue();
+            return calculateRetiredBenefitDuration();
         } else if (AGE >= 18 || AGE <= 20){
             duration = 5.00;
         } else if(AGE > 20 || AGE <= 25){
