@@ -32,7 +32,7 @@ public class Sala {
 
 	public String getApelido() {
 		if(apelido == null) {
-			return "Esta sala n„o possui apelido!";
+			return "Esta sala n√£o possui apelido!";
 		}
 		return apelido;
 	}
@@ -43,7 +43,7 @@ public class Sala {
 
 	public String getTitulo() {
 		if(titulo == null) {
-			return "Esta sala n„o possui um tÌtulo definido!";
+			return "Esta sala n√£o possui um t√≠tulo definido!";
 		}
 		return titulo;
 	}
